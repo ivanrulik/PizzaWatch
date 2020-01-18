@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15705" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="PizzaWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="center" text="PizzaWatch " id="lnj-yI-eKP"/>
+                        <imageView width="0.5" height="0.29999999999999999" alignment="center" image="tray" catalog="system" id="A62-3w-f7R"/>
+                        <button width="1" alignment="left" title="I Want Pizza" id="h6T-Gm-zW7">
+                            <connections>
+                                <segue destination="4Le-pV-gnF" kind="modal" id="YbT-AM-lWH"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="34" y="31"/>
+        </scene>
+        <!--Interface Controller Taman o-->
+        <scene sceneID="UUV-eX-Dow">
+            <objects>
+                <controller id="4Le-pV-gnF" customClass="InterfaceController_Taman_o" customModule="PizzaWatch_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Tamaño Pizza" id="FKx-Da-npi"/>
+                        <picker height="100" alignment="left" id="e8a-hf-49n">
+                            <connections>
+                                <action selector="pickerSelectedItemChanged:" destination="4Le-pV-gnF" id="ZeX-DT-kFA"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Masa" id="xtv-JL-eyT">
+                            <connections>
+                                <segue destination="jiu-8M-4zz" kind="modal" id="Ql1-cu-Apd"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="pickerView" destination="e8a-hf-49n" id="X8O-3j-U2i"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="294" y="31"/>
+        </scene>
+        <!--Interface Controller Masa-->
+        <scene sceneID="QXk-an-nz1">
+            <objects>
+                <controller id="jiu-8M-4zz" customClass="InterfaceController_Masa" customModule="PizzaWatch_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Tipo de Masa" id="fax-Va-O5Y"/>
+                        <picker height="100" alignment="left" id="EAn-ma-VLB">
+                            <connections>
+                                <action selector="pickerSelectedItemChange:" destination="jiu-8M-4zz" id="GLT-Li-es3"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Queso" id="eEN-Sb-bKP">
+                            <connections>
+                                <segue destination="jry-8d-3N2" kind="modal" id="6ex-6f-ZWa"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="pickerView" destination="EAn-ma-VLB" id="jFC-S2-npw"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="555" y="31"/>
+        </scene>
+        <!--Interface Controller Queso-->
+        <scene sceneID="2TF-NX-bBZ">
+            <objects>
+                <controller id="jry-8d-3N2" customClass="InterfaceController_Queso" customModule="PizzaWatch_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Tipo de Queso" id="LvF-gL-ndr"/>
+                        <picker height="100" alignment="left" id="hgb-92-jOm">
+                            <connections>
+                                <action selector="pickerSelectedItemChange:" destination="jry-8d-3N2" id="YHZ-6T-J8Y"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Ingredientes" id="qAi-Vo-azv">
+                            <connections>
+                                <segue destination="do4-ce-AMW" kind="modal" id="Ckr-eL-qqU"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="pickerView" destination="hgb-92-jOm" id="uBc-Y6-XPo"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="825" y="31"/>
+        </scene>
+        <!--Interface Controller Ingredientes-->
+        <scene sceneID="BDf-m7-Wkn">
+            <objects>
+                <controller id="do4-ce-AMW" customClass="InterfaceController_Ingredientes" customModule="PizzaWatch_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Ingredientes" id="wWt-8R-Jjz"/>
+                        <group width="1" alignment="left" id="cVl-sc-Gip">
+                            <items>
+                                <label alignment="left" text="1. " id="2Ei-TO-XYs"/>
+                                <label alignment="left" text="_" id="YnX-j2-V0p"/>
+                            </items>
+                        </group>
+                        <slider width="1" alignment="left" value="1" maximum="9" steps="10" id="Hdu-5c-JqM">
+                            <connections>
+                                <action selector="i1Slide:" destination="do4-ce-AMW" id="06X-LQ-IsS"/>
+                            </connections>
+                        </slider>
+                        <group width="1" alignment="left" id="foV-oI-nKF">
+                            <items>
+                                <label alignment="left" text="2. " id="pCb-um-BbS"/>
+                                <label alignment="left" text="_" id="89u-VL-8Pa"/>
+                            </items>
+                        </group>
+                        <slider width="1" alignment="left" value="1" maximum="9" steps="10" id="YYD-Uf-vih">
+                            <connections>
+                                <action selector="i2Slide:" destination="do4-ce-AMW" id="inh-6y-bjC"/>
+                            </connections>
+                        </slider>
+                        <group width="1" alignment="left" id="NTp-aq-fZm">
+                            <items>
+                                <label alignment="left" text="3. " id="6b1-sj-QPG"/>
+                                <label alignment="left" text="_" id="ZWq-jy-kZo"/>
+                            </items>
+                        </group>
+                        <slider width="1" alignment="left" value="1" maximum="9" steps="10" id="cCA-y1-HxV">
+                            <connections>
+                                <action selector="i3Slide:" destination="do4-ce-AMW" id="z8h-bV-dfF"/>
+                            </connections>
+                        </slider>
+                        <group width="1" alignment="left" id="ngs-Ez-GDn">
+                            <items>
+                                <label alignment="left" text="4. " id="2nx-dF-hF8"/>
+                                <label alignment="left" text="_" id="Dua-Ei-4VF"/>
+                            </items>
+                        </group>
+                        <slider width="1" alignment="left" value="1" maximum="9" steps="10" id="MmU-i0-saJ">
+                            <connections>
+                                <action selector="i4Slide:" destination="do4-ce-AMW" id="1pc-nz-NeT"/>
+                            </connections>
+                        </slider>
+                        <group width="1" alignment="left" id="R3p-fA-4Um">
+                            <items>
+                                <label alignment="left" text="5. " id="vHt-89-ARj"/>
+                                <label alignment="left" text="_" id="ZZG-FX-RHH"/>
+                            </items>
+                        </group>
+                        <slider width="1" alignment="left" value="1" maximum="9" steps="10" id="TWd-7s-84W">
+                            <connections>
+                                <action selector="i5Slide:" destination="do4-ce-AMW" id="mec-uz-lSc"/>
+                            </connections>
+                        </slider>
+                        <button width="1" alignment="left" title="Resumen" id="R0B-Nk-lxk">
+                            <connections>
+                                <segue destination="fnm-Be-aqm" kind="modal" id="QEK-FI-sLH"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="i1Label" destination="YnX-j2-V0p" id="PLG-Kt-epq"/>
+                        <outlet property="i2Label" destination="89u-VL-8Pa" id="EVU-BZ-HqB"/>
+                        <outlet property="i3Label" destination="ZWq-jy-kZo" id="F4G-WY-pBW"/>
+                        <outlet property="i4Label" destination="Dua-Ei-4VF" id="WaO-v4-SUA"/>
+                        <outlet property="i5Label" destination="ZZG-FX-RHH" id="PjV-Gj-ek8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1089" y="31"/>
+        </scene>
+        <!--Interface Controller Confirmar-->
+        <scene sceneID="f61-X5-D79">
+            <objects>
+                <controller id="fnm-Be-aqm" customClass="InterfaceController_Confirmar" customModule="PizzaWatch_WatchKit_Extension">
+                    <items>
+                        <label height="20" alignment="center" text="Confirmar" id="cIG-A5-4bB"/>
+                        <label alignment="left" text="Tamaño" id="Pky-G7-TcP"/>
+                        <separator alignment="left" id="XxO-Ib-ltK"/>
+                        <label alignment="left" text="_______" id="60I-eE-JCR"/>
+                        <label alignment="left" text="Masa" id="fAI-s9-dCC"/>
+                        <separator alignment="left" id="jkR-IG-2vt"/>
+                        <label alignment="left" text="_______" id="NCc-dm-6PO"/>
+                        <label alignment="left" text="Queso" id="Cdh-yp-89q"/>
+                        <separator alignment="left" id="nrs-Ea-ce7"/>
+                        <label alignment="left" text="_______" id="S1U-dS-0P1"/>
+                        <label alignment="left" text="Ingredientes" id="E97-Or-dCX"/>
+                        <separator alignment="left" id="0iA-Wh-2gO"/>
+                        <label alignment="left" text="_______" id="HeQ-2L-c7x"/>
+                        <label alignment="left" text="_______" id="TC5-y9-vIB"/>
+                        <label alignment="left" text="_______" id="Na3-ng-Wn1"/>
+                        <label alignment="left" text="_______" id="6hd-im-8fE"/>
+                        <label alignment="left" text="_______" id="tpA-pk-WOj"/>
+                        <button width="1" alignment="left" title="Ordenar" id="q4s-NE-2p8">
+                            <connections>
+                                <segue destination="Pol-Wt-DqK" kind="modal" id="8y5-A3-Jqe"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="i1Label" destination="HeQ-2L-c7x" id="idl-XD-7of"/>
+                        <outlet property="i2Label" destination="TC5-y9-vIB" id="jOw-E1-vo9"/>
+                        <outlet property="i3Label" destination="Na3-ng-Wn1" id="tNX-EP-gdK"/>
+                        <outlet property="i4Label" destination="6hd-im-8fE" id="9mg-Wl-0VA"/>
+                        <outlet property="i5Label" destination="tpA-pk-WOj" id="ZrL-S7-0y0"/>
+                        <outlet property="masaLabel" destination="NCc-dm-6PO" id="bXR-aj-jtO"/>
+                        <outlet property="orderButton" destination="q4s-NE-2p8" id="vbq-vf-fbV"/>
+                        <outlet property="quesoLabel" destination="S1U-dS-0P1" id="uLY-IX-xGj"/>
+                        <outlet property="tamañoLabel" destination="60I-eE-JCR" id="OwK-IT-ySG"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1358" y="31"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="UpP-VH-K08">
+            <objects>
+                <controller id="Pol-Wt-DqK">
+                    <items>
+                        <label alignment="center" text="Pizza Ordenada" id="Jvp-2B-d7d"/>
+                        <imageView width="0.69999999999999996" height="0.59999999999999998" alignment="center" image="smiley" catalog="system" id="UNg-2z-ASM"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1671" y="24"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="smiley" catalog="system" width="64" height="60"/>
+        <image name="tray" catalog="system" width="64" height="42"/>
+    </resources>
+</document>
